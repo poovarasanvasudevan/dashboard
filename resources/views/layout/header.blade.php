@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/table.css">
     <link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="/css/app.css">
-
+    <script data-pace-options='{ "ajax": true }' src='/js/pace.js'></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body ng-app="mobile">
