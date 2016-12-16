@@ -9,6 +9,11 @@ return [
     'parse_base' => 'http://10.1.28.72:1337/parse',
     'menu' => array(
         array(
+            'icon' => 'zmdi zmdi-home',
+            'title' => 'Home',
+            'href' => '/home'
+        ),
+        array(
             'icon' => 'zmdi zmdi-account',
             'title' => 'Users',
             'href' => '/users'

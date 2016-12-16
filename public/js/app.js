@@ -8,7 +8,7 @@ app.config(function ($mdThemingProvider) {
     $mdThemingProvider
         .theme('default')
         .primaryPalette('blue')
-        .accentPalette('orange');
+        .accentPalette('green');
 });
 
 app.controller('maincontroller', function ($scope) {
@@ -16,7 +16,6 @@ app.controller('maincontroller', function ($scope) {
 })
 
 app.controller('usercontroller', function ($scope) {
-
-
-
+    console.log(users)
+    $scope.users = users.results;
 })

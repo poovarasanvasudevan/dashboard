@@ -32,7 +32,16 @@ class MobileController extends Controller
     function home()
     {
         if (Auth::user()) {
-            return view('home');
+
+            $client = new Client();
+            $request = $client->get(Config::get('shpt.parse_base') . "/users", [
+                'headers' => [
+                    'X-Parse-Application-Id' => 'myAppId'
+                ]
+            ]);
+
+
+            return view('home')->with('users', json_decode($request->getBody()));
         } else {
             return response()->redirectTo("/");
         }
@@ -49,8 +58,12 @@ class MobileController extends Controller
                 ]
             ]);
 
+            JavaScript::put([
+                'users' => json_decode($request->getBody())
+            ]);
 
-            return view('users')->with('user', json_decode($request->getBody()));
+
+            return view('users');
         } else {
             return response()->redirectTo("/");
         }
